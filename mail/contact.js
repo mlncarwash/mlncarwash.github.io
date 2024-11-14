@@ -15,7 +15,7 @@ $(function () {
             $this.prop("disabled", true);
 
             // EmailJS send function
-            emailjs.send("service_gd243jy", "template_ixzbexc", {
+            emailjs.send("service_2u3t3s7", "template_j404s6k", {
                 name: name,
                 email: email,
                 subject: subject,
