@@ -195,6 +195,26 @@ a:focus {
     font-style: italic;
 }
 
+/* Medium Screens (Tablets and small desktops) */
+@media (max-width: 1024px) {
+    .top-bar .logo h1 {
+        font-size: 2vw;
+    }
+}
+
+/* Small Screens (Mobile phones) */
+@media (max-width: 768px) {
+    .top-bar .logo h1 {
+        font-size: 6vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar .logo h1 {
+        font-size: 8vw;
+    }
+}
+
 .top-bar .logo h1 span {
     color: #202C45;
 }
@@ -1053,7 +1073,8 @@ a:focus {
     color: #777;
     margin: 7px 0;
 }
-.location-text .exact-location  {
+
+.location-text .exact-location {
     color: #202C45;
     font-weight: 500;
 }

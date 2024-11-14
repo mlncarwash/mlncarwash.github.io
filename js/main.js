@@ -1,6 +1,6 @@
 (function ($) {
     "use strict";
-    
+
     // loader
     var loader = function () {
         setTimeout(function () {
@@ -10,7 +10,7 @@
         }, 1);
     };
     loader();
-    
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
@@ -20,11 +20,11 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
     });
-    
-    
+
+
     // Sticky Navbar
     $(window).scroll(function () {
         if ($(this).scrollTop() > 90) {
@@ -35,8 +35,8 @@
             $('.carousel, .page-header').css("margin-top", "0");
         }
     });
-    
-    
+
+
     // Dropdown on mouse hover
     $(document).ready(function () {
         function toggleNavbarMethod() {
@@ -54,7 +54,7 @@
         $(window).resize(toggleNavbarMethod);
     });
 
-    
+
     // Main carousel
     $(".carousel .owl-carousel").owlCarousel({
         autoplay: true,
@@ -64,14 +64,14 @@
         smartSpeed: 300,
         dots: false,
         loop: true,
-        nav : true,
-        navText : [
+        nav: true,
+        navText: [
             '<i class="fa fa-angle-left" aria-hidden="true"></i>',
             '<i class="fa fa-angle-right" aria-hidden="true"></i>'
         ]
     });
 
-    
+
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
         delay: 10,
@@ -87,44 +87,56 @@
         dots: true,
         loop: true,
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            576:{
-                items:1
+            576: {
+                items: 1
             },
-            768:{
-                items:2
+            768: {
+                items: 2
             },
-            992:{
-                items:3
+            992: {
+                items: 3
             }
         }
     });
-    
-    
+
+
     // Related post carousel
     $(".related-slider").owlCarousel({
         autoplay: true,
         dots: false,
         loop: true,
-        nav : true,
-        navText : [
+        nav: true,
+        navText: [
             '<i class="fa fa-angle-left" aria-hidden="true"></i>',
             '<i class="fa fa-angle-right" aria-hidden="true"></i>'
         ],
         responsive: {
-            0:{
-                items:1
+            0: {
+                items: 1
             },
-            576:{
-                items:1
+            576: {
+                items: 1
             },
-            768:{
-                items:2
+            768: {
+                items: 2
             }
         }
     });
-    
+
 })(jQuery);
 
+document.addEventListener("DOMContentLoaded", function () {
+    const whatsappLink = document.getElementById("whatsapp-link");
+    const phoneNumber = "+971503944274";
+
+    if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+        // For mobile devices, use the WhatsApp mobile link
+        whatsappLink.href = `whatsapp://send?phone=${phoneNumber}`;
+    } else {
+        // For desktop, use the web WhatsApp link
+        whatsappLink.href = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
+    }
+});
